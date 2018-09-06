@@ -1,0 +1,58 @@
+﻿@model GMed.Models.DocumentComplementaire
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DocumentComplementaire</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ActeMedical.Traitement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActeMedical.Traitement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeDocumnet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeDocumnet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TitreDocument)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitreDocument)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contenuDocument)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contenuDocument)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avis)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DocumentComplementaireId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

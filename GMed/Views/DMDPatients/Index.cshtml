@@ -1,0 +1,113 @@
+﻿@model IEnumerable<GMed.Models.DMDPatient>
+
+@{
+    ViewBag.Title = "Index";
+}
+@section myStyles{
+    <link rel='stylesheet' href='~/Content/jquery.dataTables.css'>
+   <link rel='stylesheet' href='~/Content/dataTables.bootstrap.css'>
+}
+
+
+
+
+<script>
+
+
+</script>
+<h2></h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null, new { @class = "btn btn-primary btn-sm " })
+</p>
+
+
+
+<div class="table-responsive">
+    <table id="example" class="table table-striped table-hover table-bordered dt-responsive nowrap" cellspacing="0" width="100">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomPatient)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrenomPatient)
+                </th>
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.MailPatient)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.DateDeNaissance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AntecedentsFamiliaux)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AntecedentsPersonnel)
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomPatient)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrenomPatient)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MailPatient)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateDeNaissance)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AntecedentsFamiliaux)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AntecedentsPersonnel)
+
+
+                    </td>
+                    <td>
+                       
+                        @Html.ActionLink("Details", "Details", new { id = item.DMDPatientId }, new { @class = " btn btn-warning btn-sm  " })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.DMDPatientId }, new { @class = "btn btn-primary btn-sm  " })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.DMDPatientId }, new { @class = " btn btn-danger btn-sm " })
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+    </div>
+
+        @section scripts{
+            <script type="text/javascript" src="~/Scripts/jquery.dataTables.js"></script>
+            <script type="text/javascript" src="~/Scripts/dataTables.bootstrap.js"></script>
+            <script>
+
+                $(function () {
+                    $("#example").DataTable();
+
+
+                });
+               
+
+            </script>
+        }

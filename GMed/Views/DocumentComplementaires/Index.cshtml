@@ -1,0 +1,57 @@
+﻿@model IEnumerable<GMed.Models.DocumentComplementaire>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ActeMedical.Traitement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeDocumnet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TitreDocument)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contenuDocument)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avis)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActeMedical.Traitement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeDocumnet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TitreDocument)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contenuDocument)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avis)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DocumentComplementaireId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DocumentComplementaireId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DocumentComplementaireId })
+        </td>
+    </tr>
+}
+
+</table>

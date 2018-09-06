@@ -1,0 +1,99 @@
+﻿@model IEnumerable<GMed.Models.Consultation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Patient", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DMDPatient.NomPatient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facture.FactureId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RendezVous.DateRendezVous)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FactureId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RendezVousId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Traitement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsultationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotifConsultation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistoireMaladie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamenClinique)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiagnostiqueFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.traitementPropose)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DMDPatient.NomPatient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facture.FactureId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RendezVous.DateRendezVous)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FactureId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RendezVousId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Traitement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConsultationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotifConsultation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HistoireMaladie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamenClinique)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiagnostiqueFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.traitementPropose)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ActeMedicalId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ActeMedicalId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ActeMedicalId })
+        </td>
+    </tr>
+}
+
+</table>

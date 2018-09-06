@@ -1,0 +1,114 @@
+﻿@model GMed.Models.Consultation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Consultation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DMDPatient.NomPatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMDPatient.NomPatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Facture.FactureId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Facture.FactureId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RendezVous.DateRendezVous)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RendezVous.DateRendezVous)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FactureId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FactureId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RendezVousId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RendezVousId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Traitement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Traitement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsultationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsultationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotifConsultation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotifConsultation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HistoireMaladie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HistoireMaladie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamenClinique)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamenClinique)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiagnostiqueFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiagnostiqueFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.traitementPropose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.traitementPropose)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ActeMedicalId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

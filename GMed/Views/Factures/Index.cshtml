@@ -1,0 +1,58 @@
+﻿@model IEnumerable<GMed.Models.Facture>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ActeMedical.Traitement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActeMedicalId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EtatReglement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Montant)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActeMedical.Traitement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActeMedicalId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EtatReglement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Montant)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FactureId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FactureId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FactureId })
+        </td>
+    </tr>
+}
+
+</table>
+<h2>Statistiques sur le nombre de rendez-vous chaque mois:</h2>
+<div>
+      <img src=@Url.Action("MyChart") , alt="Simple chart" />
+      <img src=@Url.Action("BillChart") , alt="Simple chart" />
+</div>
+
+<h2>Statistiques sur le nombre de rendez vous pour la semaine precedente</h2>
